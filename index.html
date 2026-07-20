@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱 The Ultimate Cat Explorer Hub</title>
+    
+    <!-- Link to external stylesheet for application dashboard layout and responsive design elements -->
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🐱 Ultimate Cat Explorer Hub</h1>
+        <p>Browse global cat breeds and submit your interaction votes directly to the live cloud database!</p>
+    </header>
+
+    <main>
+   
+        <div id="error-alert" style="display: none; background: #ffdddd; color: #cc0000; padding: 12px; margin-bottom: 20px; border-radius: 5px;"></div>
+
+        <section class="card-panel">
+            <h2>🔍 Explore Breeds & Profiles</h2>
+            
+            <!-- FILTER CONTROLS: Dropdown interaction layer populated dynamically by external JavaScript parsing arrays -->
+            <div class="filter-controls">
+                <label for="breed-selector">Choose a Breed:</label>
+                <select id="breed-selector">
+                    <!-- Default initial option node fallback before population -->
+                    <option value="">-- Select a Cat Breed --</option>
+                </select>
+            </div>
+            
+            <!-- DISPLAY AREA: Render injection wrapper node used to hold card views containing incoming text or images -->
+            <div id="display-container" class="display-area">
+                <p class="placeholder-text">Please select a cat breed from the dropdown list to load records.</p>
+            </div>
+        </section>
+
+        <section class="card-panel interaction-panel">
+            <h2>🗳️ Vote on Current Image (POST Request)</h2>
+            
+            <!-- VOTE ACTIONS: Transaction buttons initializing event triggers (Default state disabled until valid assets load) -->
+            <div class="vote-actions">
+                <button id="btn-upvote" disabled>👍 Upvote Image</button>
+                <button id="btn-downvote" disabled>👎 Downvote Image</button>
+            </div>
+            
+            <!-- STATUS MESSAGE: Real-time transactional tracking notice area tracking state changes of server payloads -->
+            <p id="vote-status-msg" class="status-msg"></p>
+        </section>
+    </main>
+
+    <!-- Core logical framework link driving data transformations, headers token management, and DOM manipulations -->
+    <script src="public/js/app.js"></script>
+</body>
+</html>
